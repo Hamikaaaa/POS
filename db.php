@@ -1,13 +1,13 @@
 <?php
-// $host = 'localhost'; // Change if using a different server
-// $dbname = 'pos_system'; // Make sure this matches your database
-// $username = 'root'; // Default XAMPP MySQL user
-// $password = ''; // Default XAMPP MySQL password (empty)
-
 $host = 'localhost'; // Change if using a different server
-$dbname = 'u866427573_sukariko'; // Make sure this matches your database
-$username = 'u866427573_sukariko'; // Default XAMPP MySQL user
-$password = '@Qetu1357'; // Default XAMPP MySQL password (empty)
+$dbname = 'pos_system'; // Make sure this matches your database
+$username = 'root'; // Default XAMPP MySQL user
+$password = ''; // Default XAMPP MySQL password (empty)
+
+// $host = 'localhost'; // Change if using a different server
+// $dbname = 'u866427573_sukariko'; // Make sure this matches your database
+// $username = 'u866427573_sukariko'; // Default XAMPP MySQL user
+// $password = '@Qetu1357'; // Default XAMPP MySQL password (empty)
 
 try {
     $pdo = new PDO(

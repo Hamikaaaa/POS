@@ -4,7 +4,7 @@ require __DIR__ . '/../db.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header('Location: /POS/login.php');
+    header('Location: login.php');
     exit();
 }
 
@@ -247,7 +247,7 @@ $inventory = $inventory_query->fetchAll(PDO::FETCH_ASSOC);
             <li><a href="suppliers.php"><i class=" fas fa-address-card"></i>Suppliers</a></li>
             <li><a href="payments.php"><i class="fas fa-credit-card"></i> Payments</a></li>
             <li><a href="users.php"><i class="fas fa-users"></i> Manage Users</a></li>
-            <li><a href="/POS/logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
     </div>
 

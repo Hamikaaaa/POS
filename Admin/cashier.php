@@ -4,7 +4,7 @@ require __DIR__ . '/../db.php';
 
 // Ensure the user is logged in and has the correct role
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: /POS/index.php");
+    header("Location: index.php");
     exit();
 }
 

@@ -4,7 +4,7 @@ require __DIR__ . '/../db.php';
 
 // Check if the user is a super admin
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'super_admin') {
-    header('Location: /POS/index.php');
+    header('Location: index.php');
     exit();
 }
 
@@ -203,7 +203,7 @@ try {
             <li><a href="suppliers.php"><i class=" fas fa-address-card"></i>Suppliers</a></li>
             <li><a href="payments.php"><i class="fas fa-credit-card"></i> Payments</a></li>
             <li><a href="users.php"><i class="fas fa-users"></i> Manage Users</a></li>
-            <li><a href="/POS/logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
     </div>
 

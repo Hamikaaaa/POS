@@ -285,7 +285,7 @@ $result = $conn->query("SELECT * FROM products");
     border-radius: 0.5rem;
     max-width: 90%;
     max-height: 90%;
-    overflow-y: auto;
+    overflow-y: hidden;
     z-index: 10000; /* Even higher to be safe */
 }
 
@@ -398,7 +398,7 @@ $result = $conn->query("SELECT * FROM products");
 </a>
 
         <span class="font-bold text-lg">Hello, <span class="text-[#EC6D10]"><?= htmlspecialchars($user['username']); ?></span></span>
-        <a href="/POS/logout.php" class="text-white text-lg font-bold transition hover:text-[#EC6D10]">Logout</a>
+        <a href="logout.php" class="text-white text-lg font-bold transition hover:text-[#EC6D10]">Logout</a>
     </div>
 </nav>
 
@@ -451,12 +451,12 @@ $result = $conn->query("SELECT * FROM products");
 </div>
 
 
-<div class="walalang" id="walalang">
+<!-- <div class="walalang" id="walalang">
     <br><br>
-</div>
+</div> -->
 
 <!-- Main Container with Dynamic Width -->
-<div class="flex transition-all duration-300 ease-in-out" id="main-container" style="position: relative; display: flex; min-height: calc(100vh - 72px); width: 100%;">
+<div class="flex transition-all duration-300 ease-in-out" id="main-container" style="position: relative; display: flex; min-height: 100vh; width: 100%;">
     <!-- Product Grid Section (Initially 100%, becomes 60% when cart is shown) -->
     <div id="product-section" class="w-full transition-all duration-300 ease-in-out p-4" style="margin-top: 20px;">
         <!-- Category Filter -->
@@ -468,12 +468,14 @@ $result = $conn->query("SELECT * FROM products");
             <button class="filter-btn" onclick="filterCategory('BEV', this)">Beverages</button>
             <button class="filter-btn" onclick="filterCategory('DES', this)">Desserts</button>
         </div>
-    <h2 class="text-xl font-bold mb-4 text-left" style="color: white;">Products</h2>
+    
+    
+        <h2 class="text-xl font-bold mb-4 text-left" style="color: white;">Products</h2>
 
         
         <!-- Product Grid -->
-        <div style="height: 600px; overflow: hidden;">
-    <div class="grid grid-cols-4 gap-4 hover:overflow-y-auto" id="product-grid" style="height: 100%; overflow-y: auto; overflow-x: hidden;">
+        <div style="height: auto; overflow: hidden;">
+    <div class="grid grid-cols-4 gap-4 hover:overflow-y-auto" id="product-grid" style="height: auto; overflow-y: auto; overflow-x: hidden;">
             <?php while ($row = $result->fetch_assoc()): ?>
                 <div class="product-card bg-[#FFE8D6] p-3 shadow-lg rounded-lg text-center flex flex-col items-center space-y-2 transition-transform transform hover:scale-105"
                     data-category="<?= $row['category_code']; ?>">
@@ -521,12 +523,13 @@ $result = $conn->query("SELECT * FROM products");
     height: 100%;
     background-color: white;
     border-left: 1px solid #e5e7eb;
-    overflow-y: auto;
+    overflow-y: hidden;
     z-index: 10;
     box-shadow: -2px 0 8px rgba(0,0,0,0.1);
-    transition: width 0.3s ease-in-out;">
+    transition: width 0.3s ease-in-out;
+    ">
     
-    <h2 class="text-lg font-bold mb-4 flex items-center text-[#EC6D10]" style="margin-top: 20px;">
+    <h2 class="text-lg font-bold mb-4 flex items-center text-[#EC6D10]" style="margin-top: 30px;">
         <i class="fas fa-shopping-cart mr-2"></i> Cart
     </h2>
     <table class="w-full bg-transparent text-center mb-4 rounded-lg">

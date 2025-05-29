@@ -3,7 +3,7 @@ session_start();
 require __DIR__ . '/../db.php';
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'super_admin') {
-    header('Location: /POS/index.php');
+    header('Location: index.php');
     exit();
 }
 
